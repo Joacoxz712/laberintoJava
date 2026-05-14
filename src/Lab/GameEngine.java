@@ -1,7 +1,5 @@
 package Lab;
 
-import java.sql.SQLOutput;
-
 public class GameEngine {
     private final Player player;
     private final Maze maze;
