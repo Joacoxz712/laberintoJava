@@ -62,5 +62,4 @@ public class laberinto {
 		
 		sc.close();
 	}
-
 }
