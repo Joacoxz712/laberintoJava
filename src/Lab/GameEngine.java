@@ -1,5 +1,7 @@
 package Lab;
 
+import java.sql.SQLOutput;
+
 public class GameEngine {
     private final Player player;
     private final Maze maze;
@@ -27,13 +29,13 @@ public class GameEngine {
                     Event.EventFunc e = events.rollMovementEvent();
                     if (e.energyDelta() > 0) player.heal(e.energyDelta());
                     else player.penalize(-e.energyDelta());
-                    ui.showMessage(e.message());
+                    System.out.println(e.message());
                 }
-                case 2 -> { player.turnLeft();  ui.showMessage("Giraste a la izquierda."); }
-                case 3 -> { player.turnRight(); ui.showMessage("Giraste a la derecha.");  }
-                case 4 -> { player.rest();      ui.showMessage("Descansaste. +3 energia, -1 paso."); }
+                case 2 -> { player.turnLeft(); System.out.println("Giraste a la izquierda.");}
+                case 3 -> { player.turnRight(); System.out.println("Giraste a la derecha.");}
+                case 4 -> { player.rest(); System.out.println("Descansaste. +3 energia, -1 paso.");}
                 case 5 -> running = false;
-                default -> { player.penalize(1); ui.showMessage("Opcion invalida. -1 energia."); }
+                default -> { player.penalize(1); System.out.println("Opcion invalida. -1 energia.");}
             }
         }
 

@@ -36,8 +36,6 @@ public class UI {
         return sc.nextInt();
     }
 
-    public void showMessage(String msg) { System.out.println(msg); }
-
     public void showResult(Player player, Maze maze) {
         System.out.println("\nFIN");
         if (maze.hasReachedExit(player))
