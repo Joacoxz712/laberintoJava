@@ -8,9 +8,9 @@ public class GameEngine {
 
     public GameEngine(Player player, Maze maze, Event events, UI ui) {
         this.player = player;
-        this.maze   = maze;
+        this.maze = maze;
         this.events = events;
-        this.ui     = ui;
+        this.ui = ui;
     }
 
     public void run() {
@@ -29,11 +29,11 @@ public class GameEngine {
                     else player.penalize(-e.energyDelta());
                     ui.showMessage(e.message());
                 }
-                case 2 -> { player.turnLeft();  ui.showMessage("↰ Giraste a la izquierda."); }
-                case 3 -> { player.turnRight(); ui.showMessage("↱ Giraste a la derecha.");  }
-                case 4 -> { player.rest();      ui.showMessage("😴 Descansaste. +3 energía, -1 paso."); }
+                case 2 -> { player.turnLeft();  ui.showMessage("Giraste a la izquierda."); }
+                case 3 -> { player.turnRight(); ui.showMessage("Giraste a la derecha.");  }
+                case 4 -> { player.rest();      ui.showMessage("Descansaste. +3 energia, -1 paso."); }
                 case 5 -> running = false;
-                default -> { player.penalize(1); ui.showMessage("❌ Opción inválida. -1 energía."); }
+                default -> { player.penalize(1); ui.showMessage("Opcion invalida. -1 energia."); }
             }
         }
 
