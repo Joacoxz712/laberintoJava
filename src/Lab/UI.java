@@ -10,11 +10,11 @@ public class UI {
         System.out.println("Llega a la salida antes de quedarte sin energía.");
     }
 
-    public void showStatus(Player player, Maze maze) {
+    public void showStatus(Player player, int exitDistance) {
         System.out.printf(
                 "%n Pasos: %d/%d  | ⚡ Energía: %d%n",
                 player.getSteps(),
-                maze.getExitDistance(),
+                exitDistance,
                 player.getEnergy()
         );
     }
@@ -36,9 +36,9 @@ public class UI {
         return sc.nextInt();
     }
 
-    public void showResult(Player player, Maze maze) {
+    public void showResult(Player player, boolean hasReached) {
         System.out.println("\nFIN");
-        if (maze.hasReachedExit(player))
+        if (hasReached)
             System.out.println("Ganaste! Salida encontrada con " + player.getEnergy() + " de energia.");
         else if (!player.isAlive())
             System.out.println("Sin energia. Perdiste.");
